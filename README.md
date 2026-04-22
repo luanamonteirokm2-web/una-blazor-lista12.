@@ -9,6 +9,10 @@ Integrantes :
 Curso: Ciência da Computação,
 Disciplina: Interação Humano Computador e UX  ,
 Professor: Daniel Henrique Matos de Paiva.
+
+
+
+
 Certifique-se de ter o .NET SDK instalado.
 Abra o terminal e clone este repositório.
 Navegue até a pasta raiz do projeto (onde está o arquivo .csproj).
