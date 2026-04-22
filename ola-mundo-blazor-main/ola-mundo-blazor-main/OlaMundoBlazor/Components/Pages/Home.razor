@@ -1,0 +1,45 @@
+﻿@page "/"
+@* O rendermode é essencial no .NET 8 para que os botões funcionem (interatividade) *@
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<div class="header-container text-center my-4">
+    <h1>🌍 EcoMonitor</h1>
+    <p>Transformando pequenas ações em grande impacto ambiental.</p>
+</div>
+
+<div class="cards-container">
+    <EcoStatus Title="Reciclagem de Plástico" PointsPerAction="1" />
+    <EcoStatus Title="Descarte de Eletrônicos" PointsPerAction="5" />
+    <EcoStatus Title="Plantio de Árvores" PointsPerAction="10" />
+</div>
+<div class="progress">
+    <div class="progress-bar"
+         role="progressbar"
+         style="width:@progress%; background-color:@GetColor()">
+        @progress%
+    </div>
+</div>
+
+<button @onclick="Aumentar">Interagir</button>
+
+@code {
+    private int progress = 0;
+
+    void Aumentar()
+    {
+        if (progress < 100)
+            progress += 10;
+    }
+
+    string GetColor()
+    {
+        if (progress < 30)
+            return "red";
+        else if (progress < 70)
+            return "orange";
+        else
+            return "green";
+    }
+}

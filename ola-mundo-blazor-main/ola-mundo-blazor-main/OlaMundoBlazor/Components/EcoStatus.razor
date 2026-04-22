@@ -1,0 +1,80 @@
+<div class="activity-card @(MetaAlcancada ? "goal-reached" : "")">
+    <h3>@Title</h3>
+    
+    <p class="points-info">
+        Pontos por ação: <strong>@PointsPerAction</strong>
+    </p>
+    
+    <p class="total-info">Total acumulado:</p>
+    <span class="badge @(MetaAlcancada ? "badge-success" : "badge-primary")">
+        @TotalAccumulated
+    </span>
+    
+    <button class="btn btn-outline" @onclick="RegistrarAtividade">
+        Registrar Atividade
+    </button>
+
+    @if (MetaAlcancada)
+    {
+        <div class="achievement-message">
+            ⏳ Meta batida!<br />
+            Você é um Herói do Planeta!
+        </div>
+    }
+</div>
+
+@code {
+    // [Parameter] permite que a Home passe os valores para este componente
+    [Parameter] 
+    public string Title { get; set; } = string.Empty;
+    
+    [Parameter] 
+    public int PointsPerAction { get; set; }
+
+    // Variável de estado que guarda o total acumulado
+    private int TotalAccumulated { get; set; } = 0;
+
+    // Propriedade computada para verificar se a meta de 100 pontos foi atingida
+    private bool MetaAlcancada => TotalAccumulated >= 100;
+
+    // Método disparado ao clicar no botão
+    private void RegistrarAtividade()
+    {
+        TotalAccumulated += PointsPerAction;
+    }
+}
+<div class="card p-3 m-2 shadow-sm">
+    <h4>@Titulo</h4>
+
+    <p style="font-size:18px; color:@CorTexto">
+        Total acumulado: <strong>@total</strong>
+    </p>
+
+    <button class="btn btn-success" @onclick="RegistrarAcao">
+        +@PesoAcao pontos
+    </button>
+
+    @if (total >= 100)
+    {
+        <p style="color:green; font-weight:bold; margin-top:10px;">
+            🌍 Você é um Herói do Planeta!
+        </p>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string Titulo { get; set; } = "";
+
+    [Parameter]
+    public int PesoAcao { get; set; }
+
+    private int total = 0;
+
+    private void RegistrarAcao()
+    {
+        total += PesoAcao;
+    }
+
+    private string CorTexto => total >= 50 ? "green" : "black";
+}

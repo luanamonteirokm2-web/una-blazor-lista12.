@@ -1,0 +1,65 @@
+.activity-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    border-left: 5px solid #0d6efd; /* Borda azul padrão */
+    padding: 20px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Modificador quando atinge 100 pontos */
+.activity-card.goal-reached {
+    border-left-color: #198754; /* Borda verde */
+}
+
+.activity-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #333;
+    min-height: 45px;
+}
+
+.points-info, .total-info {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.badge {
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.badge-primary { background-color: #0d6efd; }
+.badge-success { background-color: #198754; }
+
+.btn {
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background-color: transparent;
+    color: #198754;
+    border: 1px solid #198754;
+    margin-top: auto;
+}
+
+.btn:hover {
+    background-color: #f8fff9;
+}
+
+.achievement-message {
+    margin-top: 15px;
+    color: #198754;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
