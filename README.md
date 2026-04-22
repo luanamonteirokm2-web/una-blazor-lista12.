@@ -2,10 +2,15 @@
 ## 👤 Identificação
 Integrantes :
 •Letícia Petrina Machado Silva ,
+
 •João Augusto Miranda Viana de Souza,
+
 •Luana Xavier Monteiro,
+
 •Pedro Morais Hilbert ,
+
 - Daniel de Almeida Vieira ,
+
 Curso: Ciência da Computação,
 Disciplina: Interação Humano Computador e UX  ,
 Professor: Daniel Henrique Matos de Paiva.
